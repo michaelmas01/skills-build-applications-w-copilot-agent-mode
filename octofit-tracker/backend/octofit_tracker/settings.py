@@ -25,7 +25,8 @@ SECRET_KEY = "django-insecure-3dfaf%h^g94nma1hmjws82#d2obt)k2@)p4(w8g4-&-di3t%c1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+# Allow all hosts
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -129,5 +130,18 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# Allow all origins for CORS
+# Enable CORS to allow all origins, methods, and headers
 CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'PATCH',
+    'DELETE',
+    'OPTIONS',
+]
+CORS_ALLOW_HEADERS = [
+    'content-type',
+    'authorization',
+    'x-csrftoken',
+]
